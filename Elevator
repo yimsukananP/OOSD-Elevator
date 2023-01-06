@@ -1,0 +1,44 @@
+public class Elevator{
+    int numlayer = 1 ;
+    int width;
+    int length;
+    int collect = 0;
+    int maxweight = 1000 ;
+    boolean use = true;
+    boolean Broken = false;
+    int s;
+    int Things;
+    int [] layer = new int [15];
+    boolean open = true;
+     public Elevator(){
+        
+        }
+     public void addUser(int weight , int layer,int currenLayer){
+        if(open){     
+         if((collect + weight)>maxweight){
+             System.out.println("OverWeight");
+            }else{
+        collect = collect + weight;
+        this.layer[layer] = 1 ;
+    }
+        }else{
+          System.out.println("Closed");
+        }
+       }
+     public void close(){
+        open = false;
+     }
+     public void addThings(int layer ,int weight , int width , int lenght,int currenLayer ){
+        this.numlayer = layer;
+        Things = Things+weight;
+        this.width = width;
+        this.length = length;
+     }
+     public void Broke (){
+       Broken = true;
+       use = false;
+     }
+    public void nextLayer(){
+        
+    }
+}
