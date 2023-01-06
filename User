@@ -1,0 +1,54 @@
+public class user
+{
+    // instance variables - replace the example below with your own
+    private int x;
+   Status s;
+   int layer;
+   int weigth;
+   Type t;
+    int length;
+    int width;
+    int currenLayer;
+    ElevatorPSN psn = new ElevatorPSN(); 
+     ElevatorPSG  psg =new ElevatorPSG();
+      ElevatorFG  fg = new ElevatorFG();
+      ElevatorPSG  psc =new ElevatorPSG();
+    public user(int layer,int weigth,int type,int currenLayer)
+    {
+        if(type==1){
+        this.t = Type.person;
+        
+       psg.addUser(weigth,layer,currenLayer);
+    }else if(type==2){
+        this.t=Type.cripple;
+       psn.addUser(weigth,layer,currenLayer);
+      
+    }else{
+        psc.addUser(weigth,layer,currenLayer);
+        
+    }
+        this.layer = layer;
+        this.weigth = weigth;
+    }
+    public user(int layer,int weigth,int length,int width,int currenLayer)
+    {
+        this.t = Type.material;
+        this.layer = layer;
+        this.weigth = weigth;
+        this.length = length;
+        this.width = width;
+       fg.addThings(layer,weigth,length,width,currenLayer);
+    }
+ /* public static void main(String[] args)
+    {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("please input layer Elevator current : ");
+        
+        System.out.println("Enter Person or Thing");
+        int pt = scan.nextInt();
+        if(pt==1){
+            
+        
+    }
+    */
+}
